@@ -1,0 +1,241 @@
+/* src/components/Navbar.css */
+
+/* ================= NAVBAR CORE ================= */
+.navbar {
+  background: rgba(5, 5, 5, 0.85); /* Dark semi-transparent */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky; /* Sticky Header */
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px); /* Glass Effect */
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* BRAND LOGO */
+.navbar-logo {
+  color: white;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  gap: 10px;
+}
+.logo-icon { color: #22c55e; }
+
+/* ================= DESKTOP MENU ================= */
+.nav-menu {
+  display: flex;
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: center; /* Centers the links */
+  margin-right: 2rem;
+  padding: 0;
+}
+
+.nav-item { height: 80px; display: flex; align-items: center; }
+
+.nav-links {
+  color: #a1a1aa;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  gap: 8px;
+}
+
+.nav-links:hover { color: white; }
+
+.nav-links.active-link {
+  color: #22c55e;
+  border-bottom: 3px solid #22c55e; /* Active Indicator */
+}
+
+/* Icons inside links */
+.link-icon {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ================= RIGHT SIDE ACTIONS (FIXED) ================= */
+.nav-auth-desktop { display: flex; align-items: center; }
+
+/* Guest Buttons Container */
+.guest-actions { 
+  display: flex; 
+  gap: 12px; /* Tight, cohesive gap */
+  align-items: center;
+}
+
+/* Shared Button Styles - The Foundation */
+.nav-btn {
+  padding: 0 20px; /* Horizontal padding only, height handles vertical */
+  height: 40px; /* Fixed height for perfect alignment */
+  border-radius: 6px; /* Modern SaaS rounded rectangle (was 50px) */
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500; /* Medium weight looks more premium */
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* CRITICAL: Prevents "Sign Up" wrapping */
+  border: none;
+}
+
+/* 1. Login Button - Secondary (Subtle Ghost) */
+.login-btn {
+  background: transparent;
+  color: #e4e4e7; /* Zinc-200/Light Grey */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Very subtle border */
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+/* 2. Sign Up Button - Primary (Brand High Contrast) */
+.register-btn {
+  background-color: #22c55e;
+  border: 1px solid #22c55e;
+  color: #022c22; /* Dark Green Text for contrast */
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.register-btn:hover {
+  background-color: #4ade80;
+  border-color: #4ade80;
+  /* The "Glow" Effect */
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4); 
+  transform: translateY(-1px);
+  color: #000;
+}
+
+.register-btn:active {
+  transform: translateY(0);
+}
+
+/* ================= USER PROFILE DROPDOWN ================= */
+.user-dropdown-container { position: relative; }
+
+.user-profile-trigger {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  padding: 5px 10px; border-radius: 50px; transition: 0.2s;
+}
+.user-profile-trigger:hover { background: rgba(255,255,255,0.05); }
+
+.avatar-circle {
+  width: 35px; height: 35px;
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; border: 2px solid rgba(255,255,255,0.1);
+}
+.user-name { color: white; font-weight: 600; font-size: 0.9rem; }
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute; top: 55px; right: 0; width: 200px;
+  background: #18181b; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column; gap: 5px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+.dropdown-header {
+  padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 5px;
+}
+.dropdown-header strong { display: block; color: white; }
+.dropdown-header small { color: #a1a1aa; font-size: 0.8rem; }
+
+.dropdown-item {
+  color: #d4d4d8; text-decoration: none; padding: 10px; border-radius: 8px;
+  font-size: 0.9rem; display: flex; align-items: center; gap: 10px; transition: 0.2s; cursor: pointer;
+  background: none; border: none; width: 100%; text-align: left;
+}
+.dropdown-item:hover { background: rgba(255,255,255,0.05); color: white; }
+.dropdown-item.logout:hover { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+
+/* Divider line inside dropdown */
+.dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 4px 0;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+.mobile-icon { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+.mobile-auth-buttons { display: none; }
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex; flex-direction: column; width: 100%; height: auto;
+    position: absolute; top: 80px; left: -100%; /* Hidden by default */
+    opacity: 1; transition: all 0.5s ease;
+    background: #050505; border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 30px; margin: 0;
+  }
+
+  .nav-menu.active {
+    left: 0; /* Slide in */
+    opacity: 1; z-index: 998;
+  }
+
+  .nav-item { height: 60px; width: 100%; justify-content: center; }
+  .nav-links { width: 100%; justify-content: center; font-size: 1.2rem; }
+  .nav-links.active-link { border-bottom: none; color: #22c55e; }
+
+  .mobile-icon { display: block; }
+  .nav-auth-desktop { display: none; } /* Hide desktop auth buttons */
+
+  /* Mobile Auth Buttons */
+  .mobile-auth-buttons {
+    display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 20px;
+  }
+  .mobile-btn {
+    padding: 12px 40px; border-radius: 50px; font-weight: 700; color: white; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .mobile-btn.primary { background: #22c55e; color: black; border: none; }
+  .mobile-logout-btn {
+    background: transparent; color: #ef4444; border: 1px solid #ef4444;
+    padding: 10px 30px; border-radius: 50px; cursor: pointer; font-weight: 700;
+  }
+}

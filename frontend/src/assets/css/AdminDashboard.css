@@ -1,0 +1,164 @@
+/* src/assets/css/AdminDashboard.css */
+
+:root {
+  /* --- COLOR PALETTE --- */
+  --bg-dark: #050505;       /* Deepest Black */
+  --bg-panel: #09090b;      /* Sidebar/Header */
+  --bg-card: rgba(24, 24, 27, 0.6); /* Glassy Card */
+  --bg-card-hover: rgba(39, 39, 42, 0.8);
+  
+  --primary: #22c55e;       /* CleanZy Green */
+  --primary-glow: rgba(34, 197, 94, 0.3);
+  --danger: #ef4444;
+  --warning: #eab308;
+  --info: #3b82f6;
+  --purple: #a855f7;
+
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  
+  --border-light: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  /* --- DIMENSIONS --- */
+  --sidebar-width: 260px;
+  --header-height: 70px;
+  --radius: 16px;
+}
+
+/* --- RESET & BASE --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+}
+
+/* --- UTILITIES --- */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.text-green { color: var(--primary); }
+.text-red { color: var(--danger); }
+.text-muted { color: var(--text-muted); }
+
+/* --- LAYOUT STRUCTURE --- */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at top right, rgba(34, 197, 94, 0.05), transparent 40%);
+}
+
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* --- GRID SYSTEM --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+/* --- GLASS CARD COMPONENT --- */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(34, 197, 94, 0.2);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+}
+
+/* --- TABLE STYLES --- */
+.admin-table-container {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 1rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+}
+
+.admin-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.status-completed { background: rgba(34, 197, 94, 0.15); color: var(--primary); border: 1px solid rgba(34, 197, 94, 0.3); }
+.status-pending { background: rgba(59, 130, 246, 0.15); color: var(--info); border: 1px solid rgba(59, 130, 246, 0.3); }
+.status-cancelled { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .analytics-grid, .bottom-grid { grid-template-columns: 1fr; }
+  .main-content { margin-left: 0; padding-top: 80px; }
+}

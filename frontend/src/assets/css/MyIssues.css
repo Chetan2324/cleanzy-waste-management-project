@@ -1,0 +1,206 @@
+/* src/assets/css/MyIssues.css */
+
+.my-issues-page {
+  background-color: #050505;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.issues-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 40px; /* Top padding for Navbar */
+}
+
+/* --- HEADER --- */
+.page-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 5px;
+  font-weight: 800;
+}
+
+.page-header p {
+  color: #a1a1aa;
+  font-size: 1rem;
+}
+
+/* --- GRID LAYOUT --- */
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* --- ISSUE CARD --- */
+.issue-card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.issue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border-color: #3f3f46;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.issue-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #a1a1aa;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.issue-date {
+  font-size: 0.8rem;
+  color: #71717a;
+  font-family: monospace;
+}
+
+/* Content */
+.issue-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.issue-desc {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+/* --- STATUS BADGES --- */
+.card-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #27272a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-pending { 
+  background: rgba(234, 179, 8, 0.1); 
+  color: #fbbf24; 
+  border: 1px solid rgba(234, 179, 8, 0.2); 
+}
+
+.status-in_progress { 
+  background: rgba(59, 130, 246, 0.1); 
+  color: #60a5fa; 
+  border: 1px solid rgba(59, 130, 246, 0.2); 
+}
+
+.status-resolved { 
+  background: rgba(34, 197, 94, 0.1); 
+  color: #4ade80; 
+  border: 1px solid rgba(34, 197, 94, 0.2); 
+}
+
+.status-rejected { 
+  background: rgba(239, 68, 68, 0.1); 
+  color: #f87171; 
+  border: 1px solid rgba(239, 68, 68, 0.2); 
+}
+
+/* --- ADMIN REMARK BOX --- */
+.admin-remark-box {
+  background: rgba(63, 63, 70, 0.3);
+  border-left: 3px solid #71717a;
+  padding: 12px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 15px;
+  font-size: 0.85rem;
+}
+
+.remark-label {
+  display: block;
+  color: #d4d4d8;
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.remark-text {
+  color: #e4e4e7;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* --- EMPTY & LOADING STATES --- */
+.loading-container, .empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  color: #71717a;
+}
+
+.spin { animation: spin 1s linear infinite; font-size: 2rem; color: #22c55e; margin-bottom: 1rem; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.empty-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
+
+.btn-report {
+  background: #22c55e;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 15px;
+  display: inline-block;
+}
+.btn-report:hover { background: #4ade80; }

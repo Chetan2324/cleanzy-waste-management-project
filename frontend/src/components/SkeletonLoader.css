@@ -1,0 +1,40 @@
+.skeleton-wrapper {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .skeleton-banner {
+    height: 150px;
+    background: #eee;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .skeleton-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .skeleton-card {
+    flex: 1;
+    height: 120px;
+    background: #eee;
+    border-radius: 12px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  .skeleton-table {
+    height: 400px;
+    background: #eee;
+    border-radius: 12px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.6; }
+  }

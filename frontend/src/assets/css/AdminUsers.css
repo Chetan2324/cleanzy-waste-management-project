@@ -1,0 +1,141 @@
+/* src/assets/css/AdminUsers.css */
+
+/* --- CONTROLS BAR (Search & Filter) --- */
+.users-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  padding: 12px 15px 12px 45px;
+  border-radius: 12px;
+  color: white;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.filter-select {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  min-width: 150px;
+}
+
+/* --- USER TABLE SPECIFICS --- */
+.user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+  background-color: var(--bg-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --- ACTION BUTTONS --- */
+.actions-cell {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-view:hover { background: rgba(59, 130, 246, 0.2); color: var(--info); }
+.btn-block:hover { background: rgba(234, 179, 8, 0.2); color: var(--warning); }
+.btn-delete:hover { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+
+/* --- EMPTY STATE --- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .users-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-wrapper { max-width: 100%; }
+}

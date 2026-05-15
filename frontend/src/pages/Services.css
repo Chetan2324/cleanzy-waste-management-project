@@ -1,0 +1,187 @@
+/* ================= HERO SECTION ================= */
+.services-hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: 
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.8), var(--bg-body)),
+    url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover fixed;
+  margin-top: -80px;
+  padding-top: 80px;
+  border-bottom: 1px solid var(--border);
+}
+
+.services-hero-content {
+  position: relative; z-index: 2; max-width: 900px; padding: 0 20px;
+  animation: slideUp 0.8s ease-out;
+}
+
+.services-title {
+  font-size: 4.5rem; font-weight: 800; margin-bottom: 20px; color: white; letter-spacing: -1px;
+}
+.services-title span {
+  background: linear-gradient(135deg, #22c55e, #3b82f6);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.services-subtitle {
+  font-size: 1.25rem; color: #a1a1aa; max-width: 600px; margin: 0 auto;
+}
+
+/* ================= SERVICE CARDS ================= */
+.services-grid-section { padding: 120px 0; background: var(--bg-body); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px; margin-top: 60px;
+}
+
+.service-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 24px; padding: 40px; position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex; flex-direction: column; height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px); border-color: var(--primary-color);
+  box-shadow: 0 20px 50px -10px rgba(34, 197, 94, 0.15);
+}
+
+/* New: Core Service Highlight (Municipal) */
+.service-card.core-featured {
+  border-color: rgba(34, 197, 94, 0.4);
+  background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.05), var(--bg-card));
+}
+.core-tag {
+  position: absolute; top: 15px; right: 15px;
+  font-size: 0.7rem; color: var(--primary-color); border: 1px solid var(--primary-color);
+  padding: 4px 10px; border-radius: 50px; font-weight: 700; letter-spacing: 0.5px;
+}
+
+/* New: Target Audience Label */
+.service-label {
+  font-size: 0.75rem; color: #a1a1aa; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 15px; display: block;
+}
+
+.service-icon-box {
+  width: 60px; height: 60px; background: rgba(34, 197, 94, 0.1);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem; color: white; margin-bottom: 15px; font-weight: 700;
+}
+
+.service-card p {
+  color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;
+  margin-bottom: 30px; flex-grow: 1;
+}
+
+/* New: Outcome Text Highlight */
+.outcome-text {
+  display: block; margin-top: 10px; font-size: 0.95rem;
+  color: #a1a1aa; font-style: italic; border-left: 2px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+.service-link {
+  color: white; font-weight: 600; display: flex; align-items: center; gap: 8px;
+  font-size: 0.95rem; transition: 0.3s; cursor: pointer;
+}
+.service-link:hover { color: var(--primary-color); gap: 12px; }
+
+/* ================= TAILORED PLANS ================= */
+.solutions-section {
+  padding: 120px 0; background: var(--bg-surface);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+
+.solutions-header { text-align: center; margin-bottom: 80px; }
+.solutions-header h2 { font-size: 3rem; color: white; margin-bottom: 15px; }
+
+/* New: Transition Line */
+.transition-line {
+  color: var(--primary-color); font-weight: 600; font-size: 0.9rem;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+}
+
+.solutions-container {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
+}
+
+.solution-card {
+  background: var(--bg-body); border: 1px solid var(--border);
+  border-radius: 24px; padding: 50px; position: relative;
+}
+
+.solution-card.featured {
+  border: 1px solid var(--primary-color);
+  background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.08), transparent 60%), var(--bg-body);
+}
+
+.popular-tag {
+  position: absolute; top: 0; right: 0; background: var(--primary-color);
+  color: black; font-size: 0.75rem; font-weight: 700; padding: 5px 15px;
+  border-bottom-left-radius: 12px; border-top-right-radius: 20px;
+}
+
+.solution-card h3 { font-size: 2rem; color: white; margin-bottom: 5px; }
+.solution-price { font-size: 1.2rem; color: var(--primary-glow); margin-bottom: 20px; display: block; font-weight: 700; }
+.plan-desc { color: #a1a1aa; margin-bottom: 30px; font-size: 1rem; }
+
+.solution-features li {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 15px; color: white; font-size: 1rem;
+}
+.check-icon { color: var(--primary-color); flex-shrink: 0; }
+
+/* ================= BUTTON FIX FOR PLANS ================= */
+button.plan-btn {
+  width: 100%; padding: 16px; margin-top: 30px; border-radius: 12px;
+  font-weight: 800; font-size: 1rem; cursor: pointer;
+  transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; outline: none;
+}
+
+/* "For Homes" -> Glass Button */
+button.plan-btn.btn-secondary {
+  background-color: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+}
+button.plan-btn.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* "For Business" -> Neon Green Button */
+button.plan-btn.btn-primary {
+  background-color: #22c55e !important;
+  border: 2px solid #22c55e !important;
+  color: black !important;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+button.plan-btn.btn-primary:hover {
+  background-color: #4ade80 !important;
+  border-color: #4ade80 !important;
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+  transform: translateY(-3px);
+}
+
+/* ================= CTA ================= */
+.services-cta {
+  padding: 100px 0; text-align: center;
+  background: linear-gradient(to bottom, var(--bg-body), #051810);
+}
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .services-title { font-size: 3rem; }
+  .solutions-container { grid-template-columns: 1fr; }
+}

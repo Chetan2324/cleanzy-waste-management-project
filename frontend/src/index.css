@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* --- PROFESSIONAL DARK SAAS PALETTE --- */
+  --bg-body: #050505;       /* Deepest Black */
+  --bg-surface: rgba(18, 18, 18, 0.8); /* Semi-transparent for glass effect */
+  --bg-card: rgba(24, 24, 27, 0.6);    /* Glass card */
+  --bg-card-hover: rgba(39, 39, 42, 0.8);
+  
+  --primary-color: #22c55e; /* Vibrant Emerald */
+  --primary-glow: #4ade80;  /* Highlighting Green */
+  --primary-dim: rgba(34, 197, 94, 0.1);
+  
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 16px;
+  --shadow-glow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- UTILITIES --- */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; }
+button, input, select, textarea { font-family: inherit; }
+
+/* --- BUTTON STYLES --- */
+.btn-glow {
+  background: var(--primary-color); color: black; padding: 16px 40px; border-radius: 50px;
+  font-weight: 700; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+.btn-glow:hover { transform: translateY(-3px); box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
+
+.btn-glass {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 16px 40px; border-radius: 50px; font-weight: 700;
+  font-size: 1.1rem; cursor: pointer; transition: 0.3s; backdrop-filter: blur(10px);
+}
+.btn-glass:hover { background: rgba(255,255,255,0.15); border-color: white; }
+
+/* --- NEW: PREMIUM IMAGE UTILITY (Global) --- */
+/* Use this class 'tech-img-box' on any div wrapping an image to make it dark & premium */
+.tech-img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.tech-img-box img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  /* Dark Tech Filter: Low brightness, desaturated, high contrast */
+  filter: grayscale(60%) brightness(0.65) contrast(1.2);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.tech-img-box::after {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  /* Green Tint Gradient */
+  background: linear-gradient(to bottom, rgba(34, 197, 94, 0.15), rgba(5, 5, 5, 0.8));
+  z-index: 1; pointer-events: none; transition: opacity 0.5s ease;
+}
+
+.tech-img-box:hover img {
+  filter: grayscale(0%) brightness(1) contrast(1);
+  transform: scale(1.05);
+}
+.tech-img-box:hover::after { opacity: 0.3; }
+
+/* Global Fade In */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
