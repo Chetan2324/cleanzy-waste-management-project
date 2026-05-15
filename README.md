@@ -61,5 +61,5 @@ This project uses **simulated data logic** for educational and demonstration pur
 ---
 
 ## 👩‍💻 Developed By
-**Neha Jaiswal**  
-B.Tech CSE (Data Science Minor)  
+**Chetan Sharma**  
+B.Tech CSE (Full Stack Web Developer Minor)  
