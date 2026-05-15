@@ -39,7 +39,7 @@ const AdminUsers = () => {
   const fetchResidents = async () => {
     try {
       const { data } = await axios.get(
-        'http://localhost:5000/api/admin/residents', 
+        'https://cleanzy-waste-management-backend.onrender.com/api/admin/residents', 
         getAuthHeader()
       );
       setUsers(data);
@@ -69,7 +69,7 @@ const AdminUsers = () => {
 
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/admin/users/${user._id}/block`,
+        `https://cleanzy-waste-management-backend.onrender.com/api/admin/users/${user._id}/block`,
         {},
         getAuthHeader()
       );
@@ -91,7 +91,7 @@ const AdminUsers = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/admin/users/${userToDelete._id}`, 
+        `https://cleanzy-waste-management-backend.onrender.com/api/admin/users/${userToDelete._id}`, 
         getAuthHeader()
       );
       

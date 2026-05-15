@@ -84,7 +84,7 @@ const SchedulePickup = () => {
         if (!userInfo) { navigate('/login'); return; }
 
         // Fetch Global Settings
-        const { data } = await axios.get('http://localhost:5000/api/admin/settings', {
+        const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/admin/settings', {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
 
@@ -196,7 +196,7 @@ const SchedulePickup = () => {
         scheduledDate: formData.date
       };
 
-      const { data } = await axios.post('http://localhost:5000/api/pickups', payload, config);
+      const { data } = await axios.post('https://cleanzy-waste-management-backend.onrender.com/api/pickups', payload, config);
 
       if (data.success) {
         setPickupId(data.pickup._id || data.pickup.id);

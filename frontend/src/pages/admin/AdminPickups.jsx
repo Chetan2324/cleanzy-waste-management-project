@@ -41,7 +41,7 @@ const AdminPickups = () => {
   const fetchPickups = async () => {
     try {
       const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-      const { data } = await axios.get('http://localhost:5000/api/admin/pickups', {
+      const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/admin/pickups', {
         headers: { Authorization: `Bearer ${userInfo?.token}` }
       });
       setPickups(data);
@@ -135,7 +135,7 @@ const AdminPickups = () => {
       }
 
       await axios.patch(
-        `http://localhost:5000/api/admin/pickups/${selectedPickup._id}/status`,
+        `https://cleanzy-waste-management-backend.onrender.com/api/admin/pickups/${selectedPickup._id}/status`,
         payload,
         { headers: { Authorization: `Bearer ${userInfo?.token}` } }
       );

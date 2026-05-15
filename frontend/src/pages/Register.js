@@ -59,7 +59,7 @@ const Register = () => {
         role: 'resident' 
       };
 
-      await axios.post('http://localhost:5000/api/auth/register', payload);
+      await axios.post('https://cleanzy-waste-management-backend.onrender.com/api/auth/register', payload);
 
       // Success Logic
       setStatus('success');

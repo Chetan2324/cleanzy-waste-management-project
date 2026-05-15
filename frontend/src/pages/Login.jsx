@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       // --- BACKEND AUTH CALL ---
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('https://cleanzy-waste-management-backend.onrender.com/api/auth/login', formData);
 
       // ✅ SUCCESSFUL LOGIN (Admin or Citizen when Maintenance is OFF)
       if (response.data && response.data.token) {

@@ -32,7 +32,7 @@ const AdminSettings = () => {
   const fetchSettings = async () => {
     try {
       const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-      const { data } = await axios.get('http://localhost:5000/api/admin/settings', {
+      const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/admin/settings', {
         headers: { Authorization: `Bearer ${userInfo?.token}` }
       });
       setSettings(data);
@@ -64,7 +64,7 @@ const AdminSettings = () => {
       const payload = { [key]: newValue };
 
       const { data } = await axios.put(
-        'http://localhost:5000/api/admin/settings',
+        'https://cleanzy-waste-management-backend.onrender.com/api/admin/settings',
         payload,
         { headers: { Authorization: `Bearer ${userInfo?.token}` } }
       );

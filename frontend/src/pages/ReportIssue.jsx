@@ -78,7 +78,7 @@ const ReportIssue = () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         if (!userInfo) { navigate('/login'); return; }
 
-        const { data } = await axios.get('http://localhost:5000/api/admin/settings', {
+        const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/admin/settings', {
           headers: { Authorization: `Bearer ${userInfo.token}` }
         });
         
@@ -225,7 +225,7 @@ const ReportIssue = () => {
         description: combinedDescription
       };
 
-      const { data } = await axios.post('http://localhost:5000/api/issues', payload, config);
+      const { data } = await axios.post('https://cleanzy-waste-management-backend.onrender.com/api/issues', payload, config);
 
       if (data.success) {
         toast.success("Issue Reported Successfully!");

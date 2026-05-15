@@ -30,7 +30,7 @@ const MyIssues = () => {
         return;
       }
 
-      const { data } = await axios.get('http://localhost:5000/api/issues/my', {
+      const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/issues/my', {
         headers: { Authorization: `Bearer ${userInfo.token}` }
       });
 

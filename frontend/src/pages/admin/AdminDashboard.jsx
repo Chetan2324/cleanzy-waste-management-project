@@ -34,7 +34,7 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        const { data } = await axios.get('http://localhost:5000/api/admin/dashboard', {
+        const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/admin/dashboard', {
           headers: { Authorization: `Bearer ${userInfo?.token}` }
         });
         setStats(data.data);

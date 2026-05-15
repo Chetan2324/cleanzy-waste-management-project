@@ -33,7 +33,7 @@ const AdminIssues = () => {
   const fetchIssues = async () => {
     try {
       const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-      const { data } = await axios.get('http://localhost:5000/api/issues/all', {
+      const { data } = await axios.get('https://cleanzy-waste-management-backend.onrender.com/api/issues/all', {
         headers: { Authorization: `Bearer ${userInfo?.token}` }
       });
       setIssues(data);
@@ -75,7 +75,7 @@ const AdminIssues = () => {
       };
 
       const { data } = await axios.patch(
-        `http://localhost:5000/api/issues/${id}/status`, 
+        `https://cleanzy-waste-management-backend.onrender.com/api/issues/${id}/status`, 
         payload, 
         { headers: { Authorization: `Bearer ${userInfo?.token}` } }
       );

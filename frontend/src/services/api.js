@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Our base API URL
+  baseURL: 'https://cleanzy-waste-management-backend.onrender.com/api', // Our base API URL
 });
 
 // This is an "interceptor"
